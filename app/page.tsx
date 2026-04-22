@@ -294,6 +294,71 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── AUTHOR ───────────────────────────────────────────── */}
+      <section className="py-20 lg:py-28" style={{ background: "#f8f5f0" }}>
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="rounded-3xl overflow-hidden grid lg:grid-cols-2" style={{ background: "#031F42" }}>
+            {/* Left — avatar placeholder + credential */}
+            <div className="relative flex flex-col items-center justify-center py-16 px-10 overflow-hidden">
+              <div className="blob absolute top-[-10%] right-[-10%] w-56 h-56 opacity-15 pointer-events-none" style={{ background: "#71BFA7" }} />
+              <div className="blob-2 absolute bottom-[-5%] left-[-5%] w-40 h-40 opacity-10 pointer-events-none" style={{ background: "#FFC221" }} />
+
+              {/* Avatar circle */}
+              <div className="relative mb-6 z-10">
+                <div className="w-36 h-36 rounded-full flex items-center justify-center text-5xl shadow-xl"
+                  style={{ background: "linear-gradient(135deg, #71BFA7 0%, #4fa08a 100%)" }}>
+                  👩‍⚕️
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-10 h-10 rounded-full flex items-center justify-center text-lg shadow-lg"
+                  style={{ background: "#FFC221" }}>
+                  ✓
+                </div>
+              </div>
+
+              <p className="relative z-10 text-xl font-bold text-white mb-1">Beata Janicka</p>
+              <p className="relative z-10 text-sm text-center leading-snug" style={{ color: "#71BFA7" }}>
+                Dyplomowany dietetyk<br />Warszawskiej Akademii Medycznej
+              </p>
+
+              <div className="relative z-10 mt-6 flex flex-wrap justify-center gap-2">
+                {["Dietetyk kliniczny", "Biohacking", "Metabolizm", "Hormony"].map((t) => (
+                  <span key={t} className="px-3 py-1 rounded-full text-xs font-medium"
+                    style={{ background: "rgba(113,191,167,0.15)", color: "#71BFA7", border: "1px solid rgba(113,191,167,0.25)" }}>
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Right — bio */}
+            <div className="py-14 px-10 lg:py-16" style={{ background: "rgba(255,255,255,0.03)", borderLeft: "1px solid rgba(255,255,255,0.06)" }}>
+              <p className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: "#71BFA7" }}>
+                O autorce
+              </p>
+              <h2 className="text-2xl lg:text-3xl font-bold text-white mb-5 leading-snug">
+                Specjalistka od trwałej<br />
+                <span style={{ color: "#71BFA7" }}>przemiany metabolicznej</span>
+              </h2>
+              <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.65)" }}>
+                W swojej metodzie skupiam się na przywracaniu prawidłowego metabolizmu
+                i gospodarki hormonalnej — wierzę, że ich dysfunkcje są przyczyną większości
+                problemów zdrowotnych i sylwetkowych.
+              </p>
+              <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.65)" }}>
+                Pracuję zarówno z osobami, które chcą schudnąć, jak i z tymi z dysfunkcjami jelit,
+                problemami hormonalnymi czy niskim poziomem energii. Pomagam też tym, którzy chcą
+                zwiększyć wydajność ciała i umysłu.
+              </p>
+              <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
+                W pracy wykorzystuję diety niskowęglowodanowe, naprawę snu i regeneracji,
+                usuwanie toksyn z otoczenia, aktywność fizyczną oraz sprawdzone metody
+                biohackingu przywracające homeostazę i wysoki poziom energii.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── FOR WHOM ─────────────────────────────────────────── */}
       <section style={{ background: "#f8f5f0" }} className="py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
