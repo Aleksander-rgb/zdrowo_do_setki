@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 const benefits = [
   {
@@ -303,11 +304,16 @@ export default function Home() {
               <div className="blob absolute top-[-10%] right-[-10%] w-56 h-56 opacity-15 pointer-events-none" style={{ background: "#71BFA7" }} />
               <div className="blob-2 absolute bottom-[-5%] left-[-5%] w-40 h-40 opacity-10 pointer-events-none" style={{ background: "#FFC221" }} />
 
-              {/* Avatar circle */}
+              {/* Avatar */}
               <div className="relative mb-6 z-10">
-                <div className="w-36 h-36 rounded-full flex items-center justify-center text-5xl shadow-xl"
-                  style={{ background: "linear-gradient(135deg, #71BFA7 0%, #4fa08a 100%)" }}>
-                  👩‍⚕️
+                <div className="w-36 h-44 rounded-2xl overflow-hidden shadow-xl" style={{ border: "3px solid rgba(113,191,167,0.4)" }}>
+                  <Image
+                    src="https://zdrowodosetki.pl/wp-content/uploads/2025/11/IMG_8524-204x300.jpg"
+                    alt="Beata Janicka — dietetyk"
+                    width={204}
+                    height={300}
+                    className="w-full h-full object-cover object-top"
+                  />
                 </div>
                 <div className="absolute -bottom-2 -right-2 w-10 h-10 rounded-full flex items-center justify-center text-lg shadow-lg"
                   style={{ background: "#FFC221" }}>
