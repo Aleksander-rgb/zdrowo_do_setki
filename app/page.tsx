@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { HeroSection } from "@/components/ui/hero-section";
+import Testimonials from "@/components/ui/testimonials";
 
 const benefits = [
   {
@@ -95,107 +97,25 @@ function LeadForm({ variant = "hero" }: { variant?: "hero" | "bottom" }) {
 export default function Home() {
   return (
     <main className="overflow-x-hidden">
-      {/* ── HERO ─────────────────────────────────────────────── */}
-      <section
-        className="relative min-h-screen flex items-center grain-overlay"
-        style={{ background: "#031F42" }}
-      >
-        {/* Decorative blobs */}
-        <div
-          className="blob absolute top-[-8%] right-[-10%] w-[500px] h-[500px] opacity-15 pointer-events-none"
-          style={{ background: "#71BFA7" }}
-        />
-        <div
-          className="blob-2 absolute bottom-[-10%] left-[-8%] w-[400px] h-[400px] opacity-10 pointer-events-none"
-          style={{ background: "#FFC221" }}
-        />
-        <div
-          className="blob absolute top-[40%] left-[30%] w-[300px] h-[300px] opacity-5 pointer-events-none"
-          style={{ background: "#71BFA7" }}
-        />
+      {/* ── NEW HERO (framer-motion) ──────────────────────────── */}
+      <HeroSection
+        title={
+          <>
+            Poznaj 4 filary<br />
+            <span style={{ color: "#71BFA7" }}>trwałej przemiany</span>
+          </>
+        }
+        description="Pobierz bezpłatny ebook i odkryj mechanizmy stojące za sprawnym metabolizmem, skutecznym spalaniem tłuszczu i stabilną energią przez cały dzień."
+        buttonText="Chcę bezpłatny ebook"
+        imageUrl="/4_filary.png"
+      />
 
-        <div className="relative z-10 w-full max-w-6xl mx-auto px-6 py-20 lg:py-28 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left — Copy */}
-          <div>
-            {/* Badge */}
-            <div className="animate-fade-up-1 inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6 text-xs font-semibold tracking-wider uppercase"
-              style={{ background: "rgba(113,191,167,0.15)", color: "#71BFA7", border: "1px solid rgba(113,191,167,0.3)" }}>
-              <span className="w-1.5 h-1.5 rounded-full bg-teal inline-block animate-pulse" style={{ background: "#71BFA7" }} />
-              Bezpłatny ebook — pobierz teraz
-            </div>
-
-            {/* Headline */}
-            <h1 className="animate-fade-up-2 text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-5">
-              Poznaj mechanizmy{" "}
-              <span style={{ color: "#71BFA7" }}>trwałej przemiany</span>{" "}
-              zdrowotnej i sylwetkowej
-            </h1>
-
-            {/* Subheadline */}
-            <p className="animate-fade-up-3 text-lg text-white/70 leading-relaxed mb-8 max-w-lg">
-              Ponad <strong className="text-white">60 stron</strong> praktycznej wiedzy, narzędzi i biohaków —
-              bez skomplikowanych teorii, za to z konkretnymi wskazówkami krok po kroku.
-            </p>
-
-            {/* Trust signals */}
-            <ul className="animate-fade-up-4 check-list space-y-2 mb-8 text-white/80 text-sm">
-              <li>Jak naprawdę działa Twój metabolizm i jak go przyspieszyć</li>
-              <li>Strategie spalania tkanki tłuszczowej bez restrykcyjnych diet</li>
-              <li>Schematy na głęboki, regenerujący sen</li>
-              <li>Techniki obniżające poziom codziennego stresu</li>
-            </ul>
-
-            {/* Logos/social proof */}
-            <div className="animate-fade-up-5 flex items-center gap-3 text-white/40 text-xs">
-              <span>Dietetyka funkcjonalna</span>
-              <span>·</span>
-              <span>Evidence-based</span>
-              <span>·</span>
-              <span>Skuteczna dietetyka funkcjonalna</span>
-            </div>
-          </div>
-
-          {/* Right — Form card */}
-          <div className="animate-fade-up-3 animate-float">
-            <div className="rounded-2xl p-8 shadow-2xl"
-              style={{ background: "white", boxShadow: "0 25px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05)" }}>
-              {/* Ebook cover mockup */}
-              <div className="rounded-xl mb-6 flex flex-col items-center justify-center py-10 relative overflow-hidden"
-                style={{ background: "linear-gradient(135deg, #031F42 0%, #0a3060 60%, #0e3f7a 100%)" }}>
-                <div className="blob absolute top-2 right-2 w-24 h-24 opacity-20" style={{ background: "#71BFA7" }} />
-                <div className="blob-2 absolute bottom-2 left-2 w-20 h-20 opacity-15" style={{ background: "#FFC221" }} />
-                <span className="text-4xl mb-3 relative z-10">📘</span>
-                <p className="text-white font-bold text-center text-sm px-4 relative z-10 leading-snug">
-                  Metaboliczna Przewaga
-                </p>
-                <p className="text-teal text-xs text-center mt-1 relative z-10" style={{ color: "#71BFA7" }}>
-                  Twój przewodnik trwałej przemiany
-                </p>
-                <div className="mt-3 px-3 py-1 rounded-full text-xs font-bold relative z-10"
-                  style={{ background: "#FFC221", color: "#031F42" }}>
-                  BEZPŁATNIE
-                </div>
-              </div>
-
-              <h2 className="text-xl font-bold text-navy mb-1" style={{ color: "#031F42" }}>
-                Pobierz ebook za darmo
-              </h2>
-              <p className="text-sm mb-5" style={{ color: "#696969" }}>
-                Wpisz imię i e-mail — wyślemy Ci ebook od razu.
-              </p>
-
-              <LeadForm variant="hero" />
-            </div>
-          </div>
-        </div>
-
-        {/* Wave divider */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none" style={{ height: "60px" }}>
-          <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-full">
-            <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#f8f5f0" />
-          </svg>
-        </div>
-      </section>
+      {/* Wave divider after new hero */}
+      <div className="relative overflow-hidden leading-none" style={{ height: "60px", background: "#031F42", marginTop: "-2px" }}>
+        <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-full">
+          <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#f8f5f0" />
+        </svg>
+      </div>
 
       {/* ── WHAT'S INSIDE ────────────────────────────────────── */}
       <section style={{ background: "#f8f5f0" }} className="py-20 lg:py-28">
@@ -239,26 +159,19 @@ export default function Home() {
           <div className="relative flex justify-center">
             <div className="blob absolute inset-0 opacity-10 scale-110" style={{ background: "#71BFA7" }} />
             <div className="relative animate-float">
-              <div className="rounded-2xl w-64 h-80 flex flex-col items-center justify-center relative overflow-hidden shadow-2xl"
-                style={{ background: "linear-gradient(145deg, #031F42 0%, #0d3566 100%)" }}>
-                <div className="blob absolute -top-8 -right-8 w-32 h-32 opacity-20" style={{ background: "#71BFA7" }} />
-                <div className="blob-2 absolute -bottom-6 -left-6 w-28 h-28 opacity-15" style={{ background: "#FFC221" }} />
-                <span className="text-6xl mb-4 relative z-10">📖</span>
-                <p className="text-white font-bold text-center px-6 relative z-10 text-sm leading-snug">
-                  Metaboliczna<br />Przewaga
-                </p>
-                <p className="text-xs mt-2 relative z-10" style={{ color: "#71BFA7" }}>
-                  60+ stron wiedzy
-                </p>
-                <div className="absolute bottom-4 left-4 right-4 h-px opacity-20" style={{ background: "#71BFA7" }} />
-                <p className="absolute bottom-6 text-xs relative z-10 text-white/40">
-                  Zdrowo do Setki
-                </p>
+              <div className="rounded-2xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/4_filary.png"
+                  alt="Ebook — 4 Filary Metabolicznej Przewagi"
+                  width={400}
+                  height={500}
+                  className="w-full h-auto object-cover"
+                />
               </div>
               {/* Pages illusion */}
-              <div className="absolute top-2 -right-2 rounded-r-xl w-full h-full -z-10 opacity-60"
+              <div className="absolute top-2 -right-2 rounded-2xl w-full h-full -z-10 opacity-60"
                 style={{ background: "#e8ddd0" }} />
-              <div className="absolute top-4 -right-4 rounded-r-xl w-full h-full -z-20 opacity-40"
+              <div className="absolute top-4 -right-4 rounded-2xl w-full h-full -z-20 opacity-40"
                 style={{ background: "#e0d5c5" }} />
             </div>
           </div>
@@ -266,11 +179,11 @@ export default function Home() {
           {/* Text */}
           <div>
             <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#71BFA7" }}>
-              Twój przewodnik
+              od Beaty Janickiej
             </p>
             <h2 className="text-3xl lg:text-4xl font-bold mb-5 leading-snug" style={{ color: "#031F42" }}>
-              Od „zrobiłam program"<br />do{" "}
-              <span style={{ color: "#71BFA7" }}>trwałej przemiany metabolicznej</span>
+              Dyplomowanego dietetyka,<br />która skupia się na{" "}
+              <span style={{ color: "#71BFA7" }}>trwałej przemianie metabolicznej</span>
             </h2>
             <p className="text-base leading-relaxed mb-6" style={{ color: "#696969" }}>
               Ten ebook nauczy Cię jak zdobyć i utrzymać piękną sylwetkę i zdrowie przez całe życie.
@@ -391,6 +304,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── TESTIMONIALS ─────────────────────────────────────── */}
+      <Testimonials />
 
       {/* ── BOTTOM CTA ───────────────────────────────────────── */}
       <section className="relative py-24 grain-overlay overflow-hidden" style={{ background: "#031F42" }}>
