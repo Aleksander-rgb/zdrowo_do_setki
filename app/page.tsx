@@ -39,7 +39,7 @@ function LeadForm({ variant = "hero" }: { variant?: "hero" | "bottom" }) {
     if (!name || !email) return;
     setLoading(true);
     try {
-      await fetch("https://automatyyyyka.app.n8n.cloud/webhook-test/c0d127da-8fd1-411c-948f-a59f834b4c29", {
+      await fetch("https://automatyyyyka.app.n8n.cloud/webhook/c0d127da-8fd1-411c-948f-a59f834b4c29", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email }),
