@@ -112,7 +112,7 @@ export const HeroSection = ({
               className="w-1.5 h-1.5 rounded-full inline-block"
               style={{ background: "#71BFA7" }}
             />
-            Bezpłatny ebook
+            Bezpłatny 7-Dniowy Challenge
           </motion.div>
 
           <motion.h1
@@ -212,7 +212,7 @@ export const HeroSection = ({
           {/* Main image */}
           <motion.img
             src={imageUrl}
-            alt="Ebook — Metaboliczna Przewaga"
+            alt="Ebook — 7-Dniowy Protokół Naprawczy Snu"
             whileHover={{ y: -10, rotate: 1, transition: { duration: 0.4 } }}
             className="relative rounded-2xl shadow-2xl object-cover w-64 md:w-80"
             style={{

@@ -7,24 +7,24 @@ import Testimonials from "@/components/ui/testimonials";
 
 const benefits = [
   {
-    icon: "🔥",
-    title: "Spalanie tkanki tłuszczowej",
-    desc: "Strategie utrzymania niskiego poziomu tkanki tłuszczowej bez katowania się dietami.",
-  },
-  {
-    icon: "⚡",
-    title: "Sprawny metabolizm",
-    desc: "Sposoby na podkręcenie metabolizmu i stabilny poziom energii przez cały dzień.",
-  },
-  {
     icon: "🌙",
-    title: "Głęboki, regenerujący sen",
-    desc: "Praktyczne schematy wspierające sen — fundament każdej trwałej przemiany.",
+    title: "Rytm dobowy",
+    desc: "Stałe godziny snu i wstawania — dlaczego regularność to klucz do głębokiej regeneracji i dlaczego budzisz się o 3 w nocy.",
   },
   {
-    icon: "🧠",
-    title: "Zarządzanie stresem",
-    desc: "Techniki wspomagające obniżenie codziennego stresu, który sabotuje każdą dietę.",
+    icon: "🏠",
+    title: "Środowisko snu",
+    desc: "Ciemność, cisza, temperatura — jak nawet świecące diody urządzeń elektronicznych sabotują Twój sen.",
+  },
+  {
+    icon: "🍽️",
+    title: "Dieta i hormony",
+    desc: "Melatonina, kofeina, alkohol — co i kiedy jeść i pić, żeby organizm mógł się w pełni regenerować przez całą noc.",
+  },
+  {
+    icon: "🫁",
+    title: "Oddech i relaksacja",
+    desc: "Technika 4-7-8, oddychanie przez nos, Yoga Nidra — sprawdzone metody na szybsze zasypianie i głębszy sen.",
   },
 ];
 
@@ -101,13 +101,13 @@ export default function Home() {
       <HeroSection
         title={
           <>
-            Poznaj 4 filary<br />
-            <span style={{ color: "#71BFA7" }}>trwałej przemiany</span>
+            Napraw swój sen<br />
+            <span style={{ color: "#71BFA7" }}>w 7 dni</span>
           </>
         }
-        description="Pobierz bezpłatny ebook i odkryj mechanizmy stojące za sprawnym metabolizmem, skutecznym spalaniem tłuszczu i stabilną energią przez cały dzień."
+        description="Pobierz bezpłatny ebook i odkryj sprawdzony protokół, który krok po kroku — jedno zadanie dziennie — pomoże Ci odzyskać głęboki, regenerujący sen. Bez leków, bez stresu."
         buttonText="Chcę bezpłatny ebook"
-        imageUrl="/4_filary.png"
+        imageUrl="https://zdrowodosetki.pl/wp-content/uploads/2025/12/okladka_ebook_7_dniowy.jpg"
       />
 
       {/* Wave divider after new hero */}
@@ -125,11 +125,11 @@ export default function Home() {
               Co znajdziesz w środku
             </p>
             <h2 className="text-3xl lg:text-4xl font-bold" style={{ color: "#031F42" }}>
-              Praktyczna wiedza, którą możesz<br className="hidden lg:block" /> zastosować od razu
+              4 obszary, które zmienisz<br className="hidden lg:block" /> w ciągu tygodnia
             </h2>
             <p className="mt-4 text-base max-w-xl mx-auto leading-relaxed" style={{ color: "#696969" }}>
-              Żadnej teorii dla teorii. Ten ebook daje Ci konkretne narzędzia
-              i schematy do natychmiastowego wdrożenia.
+              Żadnej teorii dla teorii. Każdy dzień to jedno konkretne zadanie —
+              proste do wdrożenia, z natychmiastowym efektem.
             </p>
           </div>
 
@@ -161,8 +161,8 @@ export default function Home() {
             <div className="relative animate-float">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/4_filary.png"
-                  alt="Ebook — 4 Filary Metabolicznej Przewagi"
+                  src="https://zdrowodosetki.pl/wp-content/uploads/2025/12/okladka_ebook_7_dniowy.jpg"
+                  alt="Ebook — 7-Dniowy Protokół Naprawczy Snu"
                   width={400}
                   height={500}
                   className="w-full h-auto object-cover"
@@ -182,22 +182,21 @@ export default function Home() {
               od Beaty Janickiej
             </p>
             <h2 className="text-3xl lg:text-4xl font-bold mb-5 leading-snug" style={{ color: "#031F42" }}>
-              Dyplomowanego dietetyka,<br />która skupia się na{" "}
-              <span style={{ color: "#71BFA7" }}>trwałej przemianie metabolicznej</span>
+              Dyplomowanego dietetyka,<br />która pomoże Ci odzyskać{" "}
+              <span style={{ color: "#71BFA7" }}>głęboki, regenerujący sen</span>
             </h2>
             <p className="text-base leading-relaxed mb-6" style={{ color: "#696969" }}>
-              Ten ebook nauczy Cię jak zdobyć i utrzymać piękną sylwetkę i zdrowie przez całe życie.
-              Znajdziesz tu wyjaśnione w prosty sposób mechanizmy, które stoją za sprawnym metabolizmem,
-              skutecznym spalaniem tkanki tłuszczowej, stabilnym poziomem energii i lepszym radzeniem
-              sobie ze stresem.
+              Sen to najbardziej efektywne i najtańsze narzędzie regeneracji — naprawia układ odpornościowy,
+              oczyszcza mózg z toksycznych pozostałości, produkuje hormony wzrostu i wydłuża życie.
+              Większość z nas śpi, ale niewielu czerpie ze snu maksimum korzyści.
             </p>
             <p className="text-base leading-relaxed mb-8" style={{ color: "#696969" }}>
-              Zaprojektowany tak, by stał się Twoim praktycznym przewodnikiem w utrzymaniu efektów —
-              w oparciu o naukę, biohacking i mądre podejście do stylu życia, a nie o chwilową motywację.
+              Ten ebook to 7 konkretnych zadań — jedno na każdy dzień. Wdrożysz je kolejno,
+              budując protokół naprawczy snu w oparciu o naukę i sprawdzone metody biohackingu.
             </p>
 
             <div className="flex flex-wrap gap-3">
-              {["60+ stron wiedzy", "Biohacking", "Evidence-based", "Gotowe schematy"].map((tag) => (
+              {["12 stron wiedzy", "Protokół 7 dni", "Evidence-based", "Zadania na każdy dzień"].map((tag) => (
                 <span key={tag} className="px-3 py-1 rounded-full text-xs font-semibold"
                   style={{ background: "rgba(113,191,167,0.12)", color: "#4fa08a", border: "1px solid rgba(113,191,167,0.25)" }}>
                   {tag}
@@ -289,12 +288,12 @@ export default function Home() {
           </h2>
           <div className="grid sm:grid-cols-2 gap-4 text-left">
             {[
-              "Próbowałaś już wielu diet, ale efekty nie były trwałe",
-              "Chcesz zrozumieć jak naprawdę działa Twój organizm",
-              "Zależy Ci na trwałej przemianie, a nie chwilowym efekcie",
-              "Szukasz podejścia opartego na nauce, nie na chwilowej modzie",
-              "Chcesz mieć więcej energii, lepiej spać i lepiej radzić sobie ze stresem",
-              "Interesujesz się biohackingiem i chcesz zastosować go praktycznie",
+              "Budzisz się w nocy i nie możesz zasnąć ponownie",
+              "Wstajesz zmęczona, mimo że leżysz 7–8 godzin w łóżku",
+              "Masz problemy z koncentracją i niski poziom energii przez cały dzień",
+              "Wiesz, że sen jest ważny, ale nie wiesz jak konkretnie go poprawić",
+              "Szukasz naturalnych metod — bez leków nasennych i suplementów na start",
+              "Chcesz wdrożyć konkretny plan, a nie kolejny ogólny poradnik",
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-3 bg-white rounded-xl p-4 shadow-sm">
                 <span className="text-lg flex-shrink-0" style={{ color: "#71BFA7" }}>✓</span>
@@ -318,11 +317,11 @@ export default function Home() {
             Pobierz bezpłatnie
           </p>
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-snug">
-            Zacznij przemianę od<br />
-            <span style={{ color: "#FFC221" }}>właściwej wiedzy</span>
+            Zacznij naprawiać sen<br />
+            <span style={{ color: "#FFC221" }}>już dziś wieczór</span>
           </h2>
           <p className="text-white/60 mb-8 text-base">
-            Dołącz i odbierz swojego darmowego ebooka — 60+ stron praktycznych narzędzi.
+            Pobierz bezpłatny ebook — 7 dni, 7 zadań, konkretny plan na regenerujący sen.
           </p>
 
           <div className="bg-white rounded-2xl p-8 shadow-2xl text-left">
