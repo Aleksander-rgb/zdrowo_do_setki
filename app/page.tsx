@@ -34,14 +34,20 @@ function LeadForm({ variant = "hero" }: { variant?: "hero" | "bottom" }) {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !email) return;
     setLoading(true);
-    setTimeout(() => {
+    try {
+      await fetch("https://automatyyyyka.app.n8n.cloud/webhook-test/c0d127da-8fd1-411c-948f-a59f834b4c29", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email }),
+      });
+    } finally {
       setLoading(false);
       setSubmitted(true);
-    }, 1200);
+    }
   };
 
   if (submitted) {
