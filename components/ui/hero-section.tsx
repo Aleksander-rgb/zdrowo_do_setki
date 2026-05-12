@@ -123,7 +123,7 @@ export const HeroSection = ({
               className="w-1.5 h-1.5 rounded-full inline-block"
               style={{ background: "#71BFA7" }}
             />
-            7-Dniowy Protokół Naprawy Snu
+            Krok 1 · Bezpłatny fundament przemiany
           </motion.div>
 
           <motion.h1
