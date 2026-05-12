@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 interface HeroSectionProps {
   title: React.ReactNode;
   description: string;
+  sleepBridge?: string;
   buttonText: string;
   imageUrl: string;
   className?: string;
@@ -42,6 +43,7 @@ const imageVariants = {
 export const HeroSection = ({
   title,
   description,
+  sleepBridge,
   buttonText,
   imageUrl,
   className,
@@ -121,7 +123,7 @@ export const HeroSection = ({
               className="w-1.5 h-1.5 rounded-full inline-block"
               style={{ background: "#71BFA7" }}
             />
-            Bezpłatny 7-Dniowy Challenge
+            7-Dniowy Protokół Naprawy Snu
           </motion.div>
 
           <motion.h1
@@ -138,6 +140,16 @@ export const HeroSection = ({
           >
             {description}
           </motion.p>
+
+          {sleepBridge && (
+            <motion.p
+              className="mt-4 max-w-xl text-base leading-relaxed"
+              style={{ color: "rgba(113,191,167,0.9)" }}
+              variants={itemVariants}
+            >
+              {sleepBridge}
+            </motion.p>
+          )}
 
           <motion.div variants={itemVariants} className="mt-8 w-full max-w-sm">
             {submitted ? (

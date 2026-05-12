@@ -91,7 +91,7 @@ function LeadForm({ variant = "hero" }: { variant?: "hero" | "bottom" }) {
         disabled={loading}
         className="gold-btn w-full rounded-xl py-4 px-6 font-bold text-navy text-base cursor-pointer disabled:opacity-70"
       >
-        {loading ? "Wysyłamy..." : "Chcę bezpłatny ebook →"}
+        {loading ? "Wysyłamy..." : "ODBIERAM PROTOKÓŁ ZA DARMO →"}
       </button>
       <p className="text-xs text-center text-gray-400 leading-relaxed">
         Bez spamu. Twoje dane są bezpieczne. Możesz się wypisać w każdej chwili.
@@ -107,12 +107,14 @@ export default function Home() {
       <HeroSection
         title={
           <>
-            Napraw swój sen<br />
-            <span style={{ color: "#71BFA7" }}>w 7 dni</span>
+            To nie brak silnej woli<br />
+            <span style={{ color: "#71BFA7" }}>blokuje efekty.</span><br />
+            To przeciążony organizm.
           </>
         }
-        description="Pobierz bezpłatny ebook i odkryj sprawdzony protokół, który krok po kroku — jedno zadanie dziennie — pomoże Ci odzyskać głęboki, regenerujący sen. Bez leków, bez stresu."
-        buttonText="Chcę bezpłatny ebook"
+        description="Sprawdzony protokół snu — krok po kroku, jedno zadanie dziennie — który pomaga odzyskać głęboki, regenerujący sen i uruchomić naturalną przemianę. Bez leków, bez stresu."
+        sleepBridge="Bo sen i regeneracja bardzo często są pierwszą rzeczą, która blokuje: metabolizm, energię, spalanie i samopoczucie."
+        buttonText="ODBIERAM PROTOKÓŁ ZA DARMO"
         imageUrl="https://zdrowodosetki.pl/wp-content/uploads/2025/12/okladka_ebook_7_dniowy.jpg"
       />
 
@@ -122,6 +124,40 @@ export default function Home() {
           <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#f8f5f0" />
         </svg>
       </div>
+
+      {/* ── MICRO FEAR ───────────────────────────────────────── */}
+      <section className="py-16 lg:py-20" style={{ background: "#f8f5f0" }}>
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="rounded-3xl p-8 lg:p-12" style={{ background: "#031F42" }}>
+            <p className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: "#FFC221" }}>
+              Ważne
+            </p>
+            <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6 leading-snug">
+              Im dłużej organizm działa<br />
+              <span style={{ color: "#71BFA7" }}>w przeciążeniu…</span>
+            </h2>
+            <ul className="space-y-3 mb-8">
+              {[
+                "tym trudniej odzyskać energię,",
+                "tym trudniej schudnąć,",
+                "tym mocniej organizm zatrzymuje efekty,",
+                "tym bardziej ciało przyzwyczaja się do ciągłego zmęczenia.",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold"
+                    style={{ background: "rgba(255,194,33,0.15)", color: "#FFC221", border: "1px solid rgba(255,194,33,0.3)" }}>
+                    !
+                  </span>
+                  <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>{item}</p>
+                </li>
+              ))}
+            </ul>
+            <p className="text-base font-medium" style={{ color: "#71BFA7" }}>
+              Dlatego warto zacząć od podstaw: snu i regeneracji.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* ── WHAT'S INSIDE ────────────────────────────────────── */}
       <section style={{ background: "#f8f5f0" }} className="py-20 lg:py-28">
@@ -310,6 +346,36 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── DESIRE / TO DOPIERO POCZĄTEK ─────────────────────── */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#71BFA7" }}>
+            To dopiero początek
+          </p>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-6 leading-snug" style={{ color: "#031F42" }}>
+            Jeśli chcesz w końcu<br />
+            <span style={{ color: "#71BFA7" }}>poczuć realną zmianę…</span>
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-4 text-left mb-10">
+            {[
+              { icon: "☀️", text: "budzić się z energią — nie z poczuciem, że nie spałaś," },
+              { icon: "🔄", text: "przestać ciągle zaczynać od nowa i w końcu zobaczyć efekty," },
+              { icon: "🧠", text: "odzyskać kontrolę nad swoim organizmem i samopoczuciem," },
+              { icon: "✨", text: "w końcu poczuć, że Twoje ciało pracuje dla Ciebie, a nie przeciwko Tobie." },
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-3 rounded-2xl p-5"
+                style={{ background: "#f8f5f0", border: "1px solid rgba(113,191,167,0.2)" }}>
+                <span className="text-xl flex-shrink-0">{item.icon}</span>
+                <p className="text-sm leading-relaxed" style={{ color: "#031F42" }}>{item.text}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-base leading-relaxed" style={{ color: "#696969" }}>
+            …to ten protokół jest właśnie pierwszym krokiem do tego miejsca.
+          </p>
+        </div>
+      </section>
+
       {/* ── TESTIMONIALS ─────────────────────────────────────── */}
       <Testimonials />
 
@@ -320,14 +386,19 @@ export default function Home() {
 
         <div className="relative z-10 max-w-lg mx-auto px-6 text-center">
           <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#71BFA7" }}>
-            Pobierz bezpłatnie
+            Zacznij teraz
           </p>
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-snug">
-            Zacznij naprawiać sen<br />
-            <span style={{ color: "#FFC221" }}>już dziś wieczór</span>
+            Za 28 dni możesz być<br />
+            <span style={{ color: "#FFC221" }}>w zupełnie innym miejscu</span>
           </h2>
-          <p className="text-white/60 mb-8 text-base">
-            Pobierz bezpłatny ebook — 7 dni, 7 zadań, konkretny plan na regenerujący sen.
+          <p className="mb-3 text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
+            Ten darmowy protokół to pierwszy krok. A jeśli będziesz chciała przejść cały proces
+            krok po kroku — pokażę Ci go w programie{" "}
+            <span style={{ color: "#FFC221", fontWeight: 600 }}>„28 dni całkowitej przemiany"</span>.
+          </p>
+          <p className="text-white/50 mb-8 text-sm">
+            Zacznij od 7 dni. Jeden dzień, jedno zadanie, konkretny plan.
           </p>
 
           <div className="bg-white rounded-2xl p-8 shadow-2xl text-left">

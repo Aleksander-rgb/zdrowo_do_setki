@@ -4,6 +4,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 const testimonials = [
   {
     name: "Adrianna",
+    age: "38 lat",
+    problem: "Ciągłe zmęczenie, brak energii",
     role: "Uczestniczka programu",
     avatar: "AD",
     avatarImg: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
@@ -12,6 +14,8 @@ const testimonials = [
   },
   {
     name: "Monika",
+    age: "44 lata",
+    problem: "Wieloletnia walka z wagą i dietami",
     role: "Uczestniczka programu",
     avatar: "MO",
     avatarImg: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
@@ -20,6 +24,8 @@ const testimonials = [
   },
   {
     name: "Jacek",
+    age: "52 lata",
+    problem: "Nadwaga i brak efektów po 50-tce",
     role: "Uczestnik programu",
     avatar: "JA",
     avatarImg: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
@@ -27,6 +33,8 @@ const testimonials = [
   },
   {
     name: "Marta",
+    age: "41 lat",
+    problem: "Złe nawyki i brak kontroli nad zdrowiem",
     role: "Uczestniczka programu",
     avatar: "MA",
     avatarImg: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face",
@@ -71,8 +79,8 @@ export default function Testimonials() {
                     <AvatarFallback style={{ background: "#71BFA7", color: "white" }}>{testimonials[0].avatar}</AvatarFallback>
                   </Avatar>
                   <div>
-                    <cite className="text-sm font-semibold not-italic" style={{ color: "#031F42" }}>{testimonials[0].name}</cite>
-                    <span className="block text-xs" style={{ color: "#696969" }}>{testimonials[0].role}</span>
+                    <cite className="text-sm font-semibold not-italic" style={{ color: "#031F42" }}>{testimonials[0].name}, {testimonials[0].age}</cite>
+                    <span className="block text-xs" style={{ color: "#71BFA7" }}>{testimonials[0].problem}</span>
                   </div>
                 </div>
               </blockquote>
@@ -99,8 +107,8 @@ export default function Testimonials() {
                     <AvatarFallback style={{ background: "#71BFA7", color: "white" }}>{testimonials[1].avatar}</AvatarFallback>
                   </Avatar>
                   <div>
-                    <cite className="text-sm font-semibold not-italic" style={{ color: "#031F42" }}>{testimonials[1].name}</cite>
-                    <span className="block text-xs" style={{ color: "#696969" }}>{testimonials[1].role}</span>
+                    <cite className="text-sm font-semibold not-italic" style={{ color: "#031F42" }}>{testimonials[1].name}, {testimonials[1].age}</cite>
+                    <span className="block text-xs" style={{ color: "#71BFA7" }}>{testimonials[1].problem}</span>
                   </div>
                 </div>
               </blockquote>
@@ -127,8 +135,8 @@ export default function Testimonials() {
                     <AvatarFallback style={{ background: "#71BFA7", color: "white" }}>{testimonials[2].avatar}</AvatarFallback>
                   </Avatar>
                   <div>
-                    <cite className="text-sm font-semibold not-italic" style={{ color: "#031F42" }}>{testimonials[2].name}</cite>
-                    <span className="block text-xs" style={{ color: "#696969" }}>{testimonials[2].role}</span>
+                    <cite className="text-sm font-semibold not-italic" style={{ color: "#031F42" }}>{testimonials[2].name}, {testimonials[2].age}</cite>
+                    <span className="block text-xs" style={{ color: "#71BFA7" }}>{testimonials[2].problem}</span>
                   </div>
                 </div>
               </blockquote>
@@ -155,8 +163,8 @@ export default function Testimonials() {
                     <AvatarFallback style={{ background: "#71BFA7", color: "white" }}>{testimonials[3].avatar}</AvatarFallback>
                   </Avatar>
                   <div>
-                    <cite className="text-sm font-semibold not-italic" style={{ color: "#031F42" }}>{testimonials[3].name}</cite>
-                    <span className="block text-xs" style={{ color: "#696969" }}>{testimonials[3].role}</span>
+                    <cite className="text-sm font-semibold not-italic" style={{ color: "#031F42" }}>{testimonials[3].name}, {testimonials[3].age}</cite>
+                    <span className="block text-xs" style={{ color: "#71BFA7" }}>{testimonials[3].problem}</span>
                   </div>
                 </div>
               </blockquote>
