@@ -3,29 +3,23 @@
 import { useState } from "react";
 import Image from "next/image";
 import { HeroSection } from "@/components/ui/hero-section";
-import Testimonials from "@/components/ui/testimonials";
 
-const benefits = [
-  {
-    icon: "🌙",
-    title: "Rytm dobowy",
-    desc: "Stałe godziny snu i wstawania — dlaczego regularność to klucz do głębokiej regeneracji i dlaczego budzisz się o 3 w nocy.",
-  },
-  {
-    icon: "🏠",
-    title: "Środowisko snu",
-    desc: "Ciemność, cisza, temperatura — jak nawet świecące diody urządzeń elektronicznych sabotują Twój sen.",
-  },
-  {
-    icon: "🍽️",
-    title: "Dieta i hormony",
-    desc: "Melatonina, kofeina, alkohol — co i kiedy jeść i pić, żeby organizm mógł się w pełni regenerować przez całą noc.",
-  },
-  {
-    icon: "🫁",
-    title: "Oddech i relaksacja",
-    desc: "Technika 4-7-8, oddychanie przez nos, Yoga Nidra — sprawdzone metody na szybsze zasypianie i głębszy sen.",
-  },
+const courseModules = [
+  "Słodkie napoje", "Rytm dobowy", "Śniadania białkowo-tłuszczowe", "Kiedy jeść kolację",
+  "Zmniejsz posiłki", "Oddech funkcjonalny", "Unikaj zbóż", "Post przerywany",
+  "10 tysięcy kroków", "Uważne jedzenie", "Higiena snu", "Japońska dieta wodna",
+  "Kiszonki", "Białko w każdym posiłku", "Energia ze słońca", "Przetworzona żywność",
+  "Czysta woda", "Kolejność jedzenia", "Opanuj stres", "Gotuj w domu",
+  "Oleje roślinne i frytury", "Kawa i herbata", "Myj warzywa", "Nabiał",
+  "Komponuj posiłki", "Suplementacja", "Zasada 80-20", "Odstępstwa",
+];
+
+const testimonials = [
+  { name: "Monika", text: "Dziękuję za inspirację — widzę pierwsze efekty i wierzę w nową drogę." },
+  { name: "Ania", text: "Bardzo się słucha. Wrzutki o medytacji i ćwiczeniach oddechowych to strzał w dziesiątkę." },
+  { name: "Mateusz", text: "Mega robota! Zakupiłem i będę polecać znajomym bez zastanowienia." },
+  { name: "Marta", text: "Cały kurs przerobiony w kilka dni — i tak będę wracać do materiałów od początku." },
+  { name: "Agnieszka", text: "Przepisy super — proste, smaczne i łatwe do wdrożenia na co dzień." },
 ];
 
 function LeadForm({ variant = "hero" }: { variant?: "hero" | "bottom" }) {
@@ -103,7 +97,7 @@ function LeadForm({ variant = "hero" }: { variant?: "hero" | "bottom" }) {
 export default function Home() {
   return (
     <main className="overflow-x-hidden">
-      {/* ── NEW HERO (framer-motion) ──────────────────────────── */}
+      {/* ── HERO ────────────────────────────────────────────── */}
       <HeroSection
         title={
           <>
@@ -118,14 +112,14 @@ export default function Home() {
         imageUrl="https://zdrowodosetki.pl/wp-content/uploads/2025/12/okladka_ebook_7_dniowy.jpg"
       />
 
-      {/* Wave divider after new hero */}
+      {/* Wave divider */}
       <div className="relative overflow-hidden leading-none" style={{ height: "60px", background: "#031F42", marginTop: "-2px" }}>
         <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-full">
           <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#f8f5f0" />
         </svg>
       </div>
 
-      {/* ── MICRO FEAR ───────────────────────────────────────── */}
+      {/* ── MICRO FEAR ──────────────────────────────────────── */}
       <section className="py-16 lg:py-20" style={{ background: "#f8f5f0" }}>
         <div className="max-w-3xl mx-auto px-6">
           <div className="rounded-3xl p-8 lg:p-12" style={{ background: "#031F42" }}>
@@ -160,88 +154,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── DLACZEGO SEN = METABOLIZM ────────────────────────── */}
+      {/* ── CO OSIĄGNIESZ W 28 DNIACH ───────────────────────── */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#71BFA7" }}>
-              Mechanizm problemu
-            </p>
-            <h2 className="text-3xl lg:text-4xl font-bold leading-snug" style={{ color: "#031F42" }}>
-              Dlaczego sen blokuje<br />
-              <span style={{ color: "#71BFA7" }}>Twój metabolizm?</span>
-            </h2>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            {/* Lewa: sygnały */}
-            <div>
-              <p className="text-sm font-bold tracking-widest uppercase mb-5" style={{ color: "#696969" }}>
-                Rozpoznajesz te sygnały?
-              </p>
-              <ul className="space-y-4">
-                {[
-                  { icon: "🍫", text: "Ciągle masz ochotę na słodkie — nawet po posiłku" },
-                  { icon: "😴", text: "Czujesz się zmęczona mimo 7–8 godzin w łóżku" },
-                  { icon: "🐺", text: "Dopada Cię wilczy głód — szczególnie wieczorem" },
-                  { icon: "⚖️", text: "Ćwiczysz, jesz mniej — a waga dalej stoi" },
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-4 rounded-2xl p-4"
-                    style={{ background: "#f8f5f0", border: "1px solid rgba(113,191,167,0.15)" }}>
-                    <span className="text-2xl flex-shrink-0">{item.icon}</span>
-                    <p className="text-sm leading-relaxed" style={{ color: "#031F42" }}>{item.text}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Prawa: wyjaśnienie */}
-            <div className="rounded-3xl p-8 lg:p-10" style={{ background: "#031F42" }}>
-              <p className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: "#FFC221" }}>
-                Wyjaśnienie
-              </p>
-              <p className="text-base leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.8)" }}>
-                To nie brak motywacji. Twój organizm jest po prostu <strong style={{ color: "white" }}>zablokowany</strong>.
-              </p>
-              <p className="text-base leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.65)" }}>
-                Bez głębokiego snu kortyzol rośnie, insulina się rozregulowuje,
-                a ciało przełącza się w tryb przetrwania — <strong style={{ color: "#71BFA7" }}>oszczędza tłuszcz zamiast go spalać</strong>.
-              </p>
-              <p className="text-base leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.65)" }}>
-                Naprawienie snu to nie optional. To warunek konieczny dla każdej trwałej przemiany metabolicznej.
-              </p>
-              <div className="rounded-2xl p-4" style={{ background: "rgba(113,191,167,0.1)", border: "1px solid rgba(113,191,167,0.25)" }}>
-                <p className="text-sm font-medium" style={{ color: "#71BFA7" }}>
-                  Właśnie dlatego 7-dniowy protokół snu to pierwszy i najważniejszy krok — bez niego każda kolejna zmiana będzie walką pod górę.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── WHAT'S INSIDE ────────────────────────────────────── */}
-      <section style={{ background: "#f8f5f0" }} className="py-20 lg:py-28">
-        <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-14">
             <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#71BFA7" }}>
-              Co znajdziesz w środku
+              Kurs 28 Dni Całkowitej Przemiany
             </p>
-            <h2 className="text-3xl lg:text-4xl font-bold" style={{ color: "#031F42" }}>
-              4 obszary, które zmienisz<br className="hidden lg:block" /> w ciągu tygodnia
+            <h2 className="text-3xl lg:text-4xl font-bold leading-snug" style={{ color: "#031F42" }}>
+              Co osiągniesz<br />
+              <span style={{ color: "#71BFA7" }}>w ciągu 28 dni?</span>
             </h2>
             <p className="mt-4 text-base max-w-xl mx-auto leading-relaxed" style={{ color: "#696969" }}>
-              Żadnej teorii dla teorii. Każdy dzień to jedno konkretne zadanie —
-              proste do wdrożenia, z natychmiastowym efektem.
+              Esencja wieloletniej pracy gabinetowej. 100% praktyki — zero lania wody.
+              Zarządzasz metabolizmem bez liczenia kalorii i intensywnych treningów.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {benefits.map((b, i) => (
-              <div
-                key={i}
-                className="card-benefit rounded-2xl bg-white p-6"
-              >
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { icon: "🔥", title: "Spalasz tłuszcz bez głodu", desc: "Trwała utrata tkanki tłuszczowej — bez liczenia kalorii, bez głodówek i efektu jojo." },
+              { icon: "🌙", title: "Naprawiasz sen i rytm dobowy", desc: "Budzisz się wypoczęta. Twój organizm regeneruje się w nocy tak, jak powinien." },
+              { icon: "🛡️", title: "Wygaszasz stany zapalne", desc: "Lepsza skóra, włosy, paznokcie i odporność — efekty widoczne od środka i na zewnątrz." },
+              { icon: "🧠", title: "Usuwasz mgłę mózgową", desc: "Ostrość umysłu, lepszy fokus i energia przez cały dzień — bez kawy co godzinę." },
+              { icon: "🚫", title: "Poznajesz blokery metabolizmu", desc: "Dowiesz się, które produkty sabotują Twoje efekty i jak je wyeliminować na stałe." },
+              { icon: "⚖️", title: "Odzyskujesz równowagę hormonalną", desc: "Zarządzasz stresem i kortyzolem — organizm przestaje oszczędzać tłuszcz." },
+            ].map((b, i) => (
+              <div key={i} className="card-benefit rounded-2xl bg-white p-6" style={{ border: "1px solid rgba(113,191,167,0.15)" }}>
                 <div className="text-3xl mb-4">{b.icon}</div>
                 <h3 className="font-bold mb-2 text-base leading-snug" style={{ color: "#031F42" }}>
                   {b.title}
@@ -255,7 +194,45 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── TWOJA DROGA DO PRZEMIANY ─────────────────────────── */}
+      {/* ── PROGRAM KURSU — 28 LEKCJI ───────────────────────── */}
+      <section style={{ background: "#f8f5f0" }} className="py-20 lg:py-28">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#71BFA7" }}>
+              Program kursu
+            </p>
+            <h2 className="text-3xl lg:text-4xl font-bold" style={{ color: "#031F42" }}>
+              28 lekcji. Jeden dzień,<br className="hidden lg:block" /> jedno konkretne zadanie.
+            </h2>
+            <p className="mt-4 text-base max-w-xl mx-auto leading-relaxed" style={{ color: "#696969" }}>
+              Każda lekcja to gotowy do wdrożenia krok — bez teorii na kilometr, bez skomplikowanych przepisów.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3 mt-6">
+              {["28 lekcji video", "4,5 godziny materiału", "Intro + zakończenie", "Dostęp na zawsze"].map((tag) => (
+                <span key={tag} className="px-4 py-1.5 rounded-full text-xs font-semibold"
+                  style={{ background: "rgba(3,31,66,0.07)", color: "#031F42", border: "1px solid rgba(3,31,66,0.1)" }}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            {courseModules.map((module, i) => (
+              <div key={i} className="flex items-center gap-3 rounded-xl px-4 py-3 bg-white"
+                style={{ border: "1px solid rgba(113,191,167,0.18)" }}>
+                <span className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
+                  style={{ background: "rgba(113,191,167,0.15)", color: "#4fa08a" }}>
+                  {i + 1}
+                </span>
+                <p className="text-sm font-medium leading-snug" style={{ color: "#031F42" }}>{module}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── DWA KROKI DO CAŁKOWITEJ PRZEMIANY ───────────────── */}
       <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-12">
@@ -302,7 +279,7 @@ export default function Home() {
               <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: "#696969" }}>Krok 2</p>
               <h3 className="text-xl font-bold mb-1 leading-snug" style={{ color: "#031F42" }}>28 Dni Całkowitej Przemiany</h3>
               <p className="text-sm font-semibold mb-1" style={{ color: "#696969" }}>Metaboliczna Przewaga</p>
-              <p className="text-2xl font-bold mb-5" style={{ color: "#031F42" }}>300 zł</p>
+              <p className="text-2xl font-bold mb-5" style={{ color: "#031F42" }}>197 zł</p>
               <ul className="space-y-3">
                 {[
                   "Odblokuj metabolizm na stałe",
@@ -325,71 +302,79 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── EBOOK DESCRIPTION ────────────────────────────────── */}
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-5xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Ebook visual */}
-          <div className="relative flex justify-center">
-            <div className="blob absolute inset-0 opacity-10 scale-110" style={{ background: "#71BFA7" }} />
-            <div className="relative animate-float">
-              <div className="rounded-2xl overflow-hidden shadow-2xl">
-                <Image
-                  src="https://zdrowodosetki.pl/wp-content/uploads/2025/12/okladka_ebook_7_dniowy.jpg"
-                  alt="Ebook — 7-Dniowy Protokół Naprawczy Snu"
-                  width={400}
-                  height={500}
-                  className="w-full h-auto object-cover"
-                />
+      {/* ── DLA KOGO JEST TEN KURS ───────────────────────────── */}
+      <section style={{ background: "#f8f5f0" }} className="py-20 lg:py-28">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#71BFA7" }}>
+            Dla kogo
+          </p>
+          <h2 className="text-3xl font-bold mb-10" style={{ color: "#031F42" }}>
+            Ten kurs jest dla Ciebie, jeśli…
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-4 text-left">
+            {[
+              { icon: "😤", text: "Masz dość nieskutecznych diet i chcesz w końcu zobaczyć trwałe efekty bez efektu jojo." },
+              { icon: "😴", text: "Czujesz się zmęczona mimo snu — brakuje Ci energii przez cały dzień." },
+              { icon: "✨", text: "Chcesz poprawić wygląd skóry, włosów i paznokci od środka, nie tylko kremami." },
+              { icon: "🧠", text: "Potrzebujesz jasności umysłu i skupienia — praca wymaga od Ciebie maksimum." },
+              { icon: "🕐", text: "Myślisz o długowieczności i zdrowiu — niezależnie od tego, ile masz teraz lat." },
+              { icon: "🔑", text: "Chcesz zrozumieć, jak naprawdę działa Twój metabolizm i wziąć nad nim kontrolę." },
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-3 bg-white rounded-xl p-4 shadow-sm">
+                <span className="text-xl flex-shrink-0">{item.icon}</span>
+                <p className="text-sm leading-relaxed" style={{ color: "#031F42" }}>{item.text}</p>
               </div>
-              {/* Pages illusion */}
-              <div className="absolute top-2 -right-2 rounded-2xl w-full h-full -z-10 opacity-60"
-                style={{ background: "#e8ddd0" }} />
-              <div className="absolute top-4 -right-4 rounded-2xl w-full h-full -z-20 opacity-40"
-                style={{ background: "#e0d5c5" }} />
-            </div>
-          </div>
-
-          {/* Text */}
-          <div>
-            <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#71BFA7" }}>
-              od Beaty Janickiej
-            </p>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-5 leading-snug" style={{ color: "#031F42" }}>
-              Dyplomowanego dietetyka,<br />która pomoże Ci odzyskać{" "}
-              <span style={{ color: "#71BFA7" }}>głęboki, regenerujący sen</span>
-            </h2>
-            <p className="text-base leading-relaxed mb-6" style={{ color: "#696969" }}>
-              Sen to najbardziej efektywne i najtańsze narzędzie regeneracji — naprawia układ odpornościowy,
-              oczyszcza mózg z toksycznych pozostałości, produkuje hormony wzrostu i wydłuża życie.
-              Większość z nas śpi, ale niewielu czerpie ze snu maksimum korzyści.
-            </p>
-            <p className="text-base leading-relaxed mb-8" style={{ color: "#696969" }}>
-              Ten ebook to 7 konkretnych zadań — jedno na każdy dzień. Wdrożysz je kolejno,
-              budując protokół naprawczy snu w oparciu o naukę i sprawdzone metody biohackingu.
-            </p>
-
-            <div className="flex flex-wrap gap-3">
-              {["12 stron wiedzy", "Protokół 7 dni", "Evidence-based", "Zadania na każdy dzień"].map((tag) => (
-                <span key={tag} className="px-3 py-1 rounded-full text-xs font-semibold"
-                  style={{ background: "rgba(113,191,167,0.12)", color: "#4fa08a", border: "1px solid rgba(113,191,167,0.25)" }}>
-                  {tag}
-                </span>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── AUTHOR ───────────────────────────────────────────── */}
+      {/* ── OPINIE KURSANTÓW ─────────────────────────────────── */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#71BFA7" }}>
+              Opinie kursantów
+            </p>
+            <h2 className="text-3xl lg:text-4xl font-bold" style={{ color: "#031F42" }}>
+              Co mówią osoby,<br className="hidden lg:block" /> które już przeszły kurs?
+            </h2>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {testimonials.map((t, i) => (
+              <div key={i} className="rounded-2xl p-6 flex flex-col gap-4"
+                style={{ background: "#f8f5f0", border: "1px solid rgba(113,191,167,0.15)" }}>
+                <div className="flex gap-1">
+                  {Array.from({ length: 5 }).map((_, s) => (
+                    <span key={s} style={{ color: "#FFC221" }}>★</span>
+                  ))}
+                </div>
+                <p className="text-sm leading-relaxed flex-1" style={{ color: "#031F42" }}>
+                  &ldquo;{t.text}&rdquo;
+                </p>
+                <div className="flex items-center gap-3 pt-2" style={{ borderTop: "1px solid rgba(113,191,167,0.15)" }}>
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold text-white flex-shrink-0"
+                    style={{ background: "#71BFA7" }}>
+                    {t.name[0]}
+                  </div>
+                  <p className="text-sm font-semibold" style={{ color: "#031F42" }}>{t.name}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── AUTORKA ──────────────────────────────────────────── */}
       <section className="py-20 lg:py-28" style={{ background: "#f8f5f0" }}>
         <div className="max-w-5xl mx-auto px-6">
           <div className="rounded-3xl overflow-hidden grid lg:grid-cols-2" style={{ background: "#031F42" }}>
-            {/* Left — avatar placeholder + credential */}
+            {/* Lewa — zdjęcie i dane */}
             <div className="relative flex flex-col items-center justify-center py-16 px-10 overflow-hidden">
               <div className="blob absolute top-[-10%] right-[-10%] w-56 h-56 opacity-15 pointer-events-none" style={{ background: "#71BFA7" }} />
               <div className="blob-2 absolute bottom-[-5%] left-[-5%] w-40 h-40 opacity-10 pointer-events-none" style={{ background: "#FFC221" }} />
 
-              {/* Avatar */}
               <div className="relative mb-6 z-10">
                 <div className="w-36 h-44 rounded-2xl overflow-hidden shadow-xl" style={{ border: "3px solid rgba(113,191,167,0.4)" }}>
                   <Image
@@ -421,10 +406,10 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right — bio */}
+            {/* Prawa — bio */}
             <div className="py-14 px-10 lg:py-16" style={{ background: "rgba(255,255,255,0.03)", borderLeft: "1px solid rgba(255,255,255,0.06)" }}>
               <p className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: "#71BFA7" }}>
-                O autorce
+                Autorka kursu
               </p>
               <h2 className="text-2xl lg:text-3xl font-bold text-white mb-5 leading-snug">
                 Specjalistka od trwałej<br />
@@ -450,173 +435,82 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FOR WHOM ─────────────────────────────────────────── */}
-      <section style={{ background: "#f8f5f0" }} className="py-20">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#71BFA7" }}>
-            Dla kogo
-          </p>
-          <h2 className="text-3xl font-bold mb-10" style={{ color: "#031F42" }}>
-            Ten ebook jest dla Ciebie, jeśli…
-          </h2>
-          <div className="grid sm:grid-cols-2 gap-4 text-left">
-            {[
-              "Budzisz się w nocy i nie możesz zasnąć ponownie",
-              "Wstajesz zmęczona, mimo że leżysz 7–8 godzin w łóżku",
-              "Masz problemy z koncentracją i niski poziom energii przez cały dzień",
-              "Wiesz, że sen jest ważny, ale nie wiesz jak konkretnie go poprawić",
-              "Szukasz naturalnych metod — bez leków nasennych i suplementów na start",
-              "Chcesz wdrożyć konkretny plan, a nie kolejny ogólny poradnik",
-            ].map((item, i) => (
-              <div key={i} className="flex items-start gap-3 bg-white rounded-xl p-4 shadow-sm">
-                <span className="text-lg flex-shrink-0" style={{ color: "#71BFA7" }}>✓</span>
-                <p className="text-sm leading-relaxed" style={{ color: "#031F42" }}>{item}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── DESIRE / TO DOPIERO POCZĄTEK ─────────────────────── */}
+      {/* ── CTA DO ZAKUPU KURSU ──────────────────────────────── */}
       <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+        <div className="max-w-2xl mx-auto px-6 text-center">
           <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#71BFA7" }}>
-            To dopiero początek
+            Gotowa na pełną przemianę?
           </p>
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6 leading-snug" style={{ color: "#031F42" }}>
-            Jeśli chcesz w końcu<br />
-            <span style={{ color: "#71BFA7" }}>poczuć realną zmianę…</span>
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4 leading-snug" style={{ color: "#031F42" }}>
+            28 Dni Całkowitej Przemiany<br />
+            <span style={{ color: "#71BFA7" }}>Metaboliczna Przewaga</span>
           </h2>
-          <div className="grid sm:grid-cols-2 gap-4 text-left mb-10">
-            {[
-              { icon: "☀️", text: "budzić się z energią — nie z poczuciem, że ledwo przeżyłaś noc," },
-              { icon: "🔥", text: "skończyć z napadami głodu i ciągłą ochotą na słodkie," },
-              { icon: "⚖️", text: "schudnąć bez liczenia kalorii i kolejnych restrykcyjnych diet," },
-              { icon: "✨", text: "w końcu zobaczyć realne efekty i poczuć, że organizm pracuje dla Ciebie." },
-            ].map((item, i) => (
-              <div key={i} className="flex items-start gap-3 rounded-2xl p-5"
-                style={{ background: "#f8f5f0", border: "1px solid rgba(113,191,167,0.2)" }}>
-                <span className="text-xl flex-shrink-0">{item.icon}</span>
-                <p className="text-sm leading-relaxed" style={{ color: "#031F42" }}>{item.text}</p>
-              </div>
-            ))}
-          </div>
-          <p className="text-base leading-relaxed" style={{ color: "#696969" }}>
-            …to ten protokół jest właśnie pierwszym krokiem do tego miejsca.
+          <p className="text-base leading-relaxed mb-8" style={{ color: "#696969" }}>
+            28 lekcji video · 4,5 godziny · dostęp na zawsze.
+            Esencja wieloletniej pracy gabinetowej — 100% praktyki, zero lania wody.
           </p>
-        </div>
-      </section>
 
-      {/* ── PREVIEW KURSU ────────────────────────────────────── */}
-      <section className="py-20 lg:py-28" style={{ background: "#f8f5f0" }}>
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="rounded-3xl overflow-hidden grid lg:grid-cols-2" style={{ background: "#031F42" }}>
-            {/* Lewa — info o kursie */}
-            <div className="py-12 px-10 lg:py-14 flex flex-col justify-center">
-              <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#FFC221" }}>
-                Krok 2 — pełna przemiana
-              </p>
-              <h2 className="text-2xl lg:text-3xl font-bold text-white mb-2 leading-snug">
-                Kiedy będziesz gotowa —<br />jest krok 2
-              </h2>
-              <p className="text-lg font-semibold mb-1" style={{ color: "#71BFA7" }}>
-                28 Dni Całkowitej Przemiany
-              </p>
-              <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.5)" }}>
-                Metaboliczna Przewaga · 28 lekcji video · 4,5 h
-              </p>
-              <ul className="space-y-3 mb-8">
-                {[
-                  "Odblokuj metabolizm — bez głodówek i liczenia kalorii",
-                  "Wyeliminuj napady głodu i ochotę na słodkie",
-                  "Odzyskaj energię i ostrość umysłu",
-                  "Schudnij trwale — bez efektu jojo",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <span className="mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0"
-                      style={{ background: "rgba(255,194,33,0.15)", color: "#FFC221" }}>✓</span>
-                    <span className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="https://zdrowodosetki.pl/kurs/28-dni-calkowitej-przemiany/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 font-bold text-sm transition-all hover:-translate-y-0.5"
-                style={{
-                  background: "linear-gradient(135deg, #FFC221 0%, #e8a800 100%)",
-                  color: "#031F42",
-                  boxShadow: "0 4px 20px rgba(255,194,33,0.3)",
-                }}
-              >
-                Dowiedz się więcej o kursie →
-              </a>
+          <div className="rounded-3xl p-8 lg:p-12 mb-8" style={{ background: "#031F42" }}>
+            <div className="flex flex-col items-center gap-2 mb-6">
+              <p className="text-sm line-through" style={{ color: "rgba(255,255,255,0.35)" }}>300 zł</p>
+              <p className="text-5xl font-bold text-white">197 <span className="text-2xl font-semibold">zł</span></p>
+              <span className="px-3 py-1 rounded-full text-xs font-bold"
+                style={{ background: "rgba(255,194,33,0.15)", color: "#FFC221", border: "1px solid rgba(255,194,33,0.3)" }}>
+                Oszczędzasz 34%
+              </span>
             </div>
 
-            {/* Prawa — note */}
-            <div className="py-12 px-10 lg:py-14 flex flex-col justify-center"
-              style={{ background: "rgba(255,255,255,0.03)", borderLeft: "1px solid rgba(255,255,255,0.06)" }}>
-              <p className="text-xs font-bold tracking-widest uppercase mb-6" style={{ color: "#71BFA7" }}>
-                Jak to działa
-              </p>
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm"
-                    style={{ background: "rgba(113,191,167,0.15)", color: "#71BFA7", border: "1px solid rgba(113,191,167,0.3)" }}>
-                    1
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-white mb-1">Zacznij od eboooka (tu jesteś)</p>
-                    <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
-                      7 dni, 7 zadań. Naprawiasz sen i przygotowujesz organizm na głębszą zmianę. Bezpłatnie.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm"
-                    style={{ background: "rgba(255,194,33,0.1)", color: "#FFC221", border: "1px solid rgba(255,194,33,0.25)" }}>
-                    2
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-white mb-1">Przejdź do kursu 28 dni</p>
-                    <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
-                      Pełny system przemiany metabolicznej. Krok po kroku — dieta, hormony, biohacking, regeneracja.
-                    </p>
-                  </div>
-                </div>
-                <div className="mt-6 rounded-2xl p-4" style={{ background: "rgba(113,191,167,0.08)", border: "1px solid rgba(113,191,167,0.15)" }}>
-                  <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.55)" }}>
-                    Ebook jest pierwszym krokiem — i najlepszym miejscem, żeby zacząć.
-                    Nie musisz decydować teraz. Odbierz protokół, zacznij go wdrażać,
-                    a kurs pokaże Ci się wtedy, gdy będziesz gotowa.
-                  </p>
-                </div>
-              </div>
-            </div>
+            <ul className="space-y-3 mb-8 text-left max-w-sm mx-auto">
+              {[
+                "Trwałe spalanie tłuszczu bez głodówek",
+                "Naprawa snu i rytmu dobowego",
+                "Eliminacja mgły mózgowej",
+                "Równowaga hormonalna i zarządzanie stresem",
+                "Dostęp na zawsze — wracasz kiedy chcesz",
+              ].map((item, i) => (
+                <li key={i} className="flex items-center gap-3">
+                  <span className="w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0"
+                    style={{ background: "rgba(113,191,167,0.2)", color: "#71BFA7" }}>✓</span>
+                  <span className="text-sm" style={{ color: "rgba(255,255,255,0.8)" }}>{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <a
+              href="https://zdrowodosetki.pl/kurs/28-dni-calkowitej-przemiany/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-full rounded-xl py-4 px-6 font-bold text-navy text-base transition-all hover:-translate-y-0.5"
+              style={{
+                background: "linear-gradient(135deg, #FFC221 0%, #e8a800 100%)",
+                color: "#031F42",
+                boxShadow: "0 4px 20px rgba(255,194,33,0.35)",
+              }}
+            >
+              KUPUJĘ KURS — 197 ZŁ →
+            </a>
+            <p className="text-xs mt-4" style={{ color: "rgba(255,255,255,0.35)" }}>
+              Bezpieczna płatność · Dostęp natychmiastowy
+            </p>
           </div>
         </div>
       </section>
 
-      {/* ── TESTIMONIALS ─────────────────────────────────────── */}
-      <Testimonials />
-
-      {/* ── BOTTOM CTA ───────────────────────────────────────── */}
+      {/* ── BOTTOM CTA — EBOOK ──────────────────────────────── */}
       <section className="relative py-24 grain-overlay overflow-hidden" style={{ background: "#031F42" }}>
         <div className="blob absolute top-[-20%] left-[-5%] w-[450px] h-[450px] opacity-10 pointer-events-none" style={{ background: "#71BFA7" }} />
         <div className="blob-2 absolute bottom-[-15%] right-[-5%] w-[400px] h-[400px] opacity-10 pointer-events-none" style={{ background: "#FFC221" }} />
 
         <div className="relative z-10 max-w-lg mx-auto px-6 text-center">
           <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#71BFA7" }}>
-            Zacznij teraz
+            Nie gotowa na kurs? Zacznij tu.
           </p>
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-snug">
-            Za 28 dni możesz być<br />
-            <span style={{ color: "#FFC221" }}>w zupełnie innym miejscu</span>
+            Odbierz darmowy protokół<br />
+            <span style={{ color: "#FFC221" }}>i zacznij od fundamentu</span>
           </h2>
           <p className="mb-3 text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
-            Ten darmowy protokół to Twój fundament. A jeśli będziesz chciała spalać tłuszcz bez liczenia kalorii,
-            wyeliminować napady głodu i zobaczyć trwałe efekty — czeka na Ciebie program{" "}
+            7-dniowy protokół naprawy snu to Twój pierwszy krok. Przygotuje organizm na trwałą przemianę — a kurs{" "}
             <a
               href="https://zdrowodosetki.pl/kurs/28-dni-calkowitej-przemiany/"
               target="_blank"
@@ -624,10 +518,11 @@ export default function Home() {
               style={{ color: "#FFC221", fontWeight: 600, textDecoration: "underline" }}
             >
               „28 Dni Całkowitej Przemiany"
-            </a>.
+            </a>{" "}
+            czeka, kiedy będziesz gotowa.
           </p>
           <p className="text-white/40 mb-8 text-sm">
-            Zacznij od 7 dni snu. Jeden dzień, jedno zadanie, konkretny plan.
+            Jeden dzień, jedno zadanie. Bezpłatnie.
           </p>
 
           <div className="bg-white rounded-2xl p-8 shadow-2xl text-left">
