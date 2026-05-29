@@ -187,30 +187,30 @@ export function StickyPromoBar({ timeLeft }: { timeLeft: number }) {
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between gap-3 px-6 py-3"
+      className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between gap-2 px-4 py-2.5 sm:gap-3 sm:px-6 sm:py-3"
       style={{
         background: "#020f22",
         borderBottom: "1px solid rgba(113,191,167,0.15)",
         boxShadow: "0 2px 16px rgba(0,0,0,0.4)",
       }}
     >
-      <div className="flex items-center gap-3 flex-wrap min-w-0">
+      <div className="flex items-center gap-2 sm:gap-3 min-w-0">
         <span
-          className="font-black tracking-widest text-sm flex-shrink-0"
-          style={{ color: "#FFC221", letterSpacing: "0.12em" }}
+          className="font-black tracking-widest text-xs sm:text-sm flex-shrink-0"
+          style={{ color: "#FFC221", letterSpacing: "0.1em" }}
         >
           {PROMO_CODE}
         </span>
-        <span style={{ color: "rgba(255,255,255,0.3)" }}>·</span>
-        <span className="text-white text-sm font-semibold flex-shrink-0">
+        <span className="hidden sm:inline" style={{ color: "rgba(255,255,255,0.3)" }}>·</span>
+        <span className="hidden sm:inline text-white text-sm font-semibold flex-shrink-0">
           −50% na kurs
         </span>
-        <span style={{ color: "rgba(255,255,255,0.3)" }}>·</span>
-        <span className="text-sm flex-shrink-0" style={{ color: "rgba(255,255,255,0.4)" }}>
-          wygasa za
+        <span className="hidden sm:inline" style={{ color: "rgba(255,255,255,0.3)" }}>·</span>
+        <span className="text-xs sm:text-sm flex-shrink-0" style={{ color: "rgba(255,255,255,0.4)" }}>
+          <span className="hidden sm:inline">wygasa za </span>
         </span>
         <span
-          className="font-black tabular-nums text-lg flex-shrink-0"
+          className="font-black tabular-nums text-sm sm:text-lg flex-shrink-0"
           style={{ color: "#71BFA7" }}
         >
           {formatTimeString(timeLeft)}
@@ -220,7 +220,7 @@ export function StickyPromoBar({ timeLeft }: { timeLeft: number }) {
         href={COURSE_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex-shrink-0 rounded-lg px-4 py-2 text-sm font-bold transition-all hover:-translate-y-0.5"
+        className="flex-shrink-0 rounded-lg px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-bold transition-all hover:-translate-y-0.5"
         style={{
           background: "linear-gradient(135deg, #FFC221 0%, #e8a800 100%)",
           color: "#031F42",

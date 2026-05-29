@@ -119,7 +119,7 @@ export default function Home() {
   };
 
   return (
-    <main className="overflow-x-hidden" style={{ paddingTop: promoState === "sticky" ? "52px" : undefined }}>
+    <main className="overflow-x-hidden" style={{ paddingTop: promoState === "sticky" ? "48px" : undefined }}>
       {promoState === "sticky" && <StickyPromoBar timeLeft={timeLeft} />}
       {promoState === "popup" && (
         <PromoPopup timeLeft={timeLeft} onDismiss={() => setPromoState("sticky")} />
