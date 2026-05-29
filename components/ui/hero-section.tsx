@@ -12,6 +12,7 @@ interface HeroSectionProps {
   buttonText: string;
   imageUrl: string;
   className?: string;
+  onSubmitSuccess?: () => void;
 }
 
 const containerVariants = {
@@ -47,6 +48,7 @@ export const HeroSection = ({
   buttonText,
   imageUrl,
   className,
+  onSubmitSuccess,
 }: HeroSectionProps) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -66,6 +68,7 @@ export const HeroSection = ({
     } finally {
       setLoading(false);
       setSubmitted(true);
+      onSubmitSuccess?.();
     }
   };
   const gridBackgroundStyle = {

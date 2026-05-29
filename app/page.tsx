@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { HeroSection } from "@/components/ui/hero-section";
+import { usePromoTimer, PromoPopup, StickyPromoBar } from "@/components/ui/promo";
 
 const courseModules = [
   "Słodkie napoje", "Rytm dobowy", "Śniadania białkowo-tłuszczowe", "Kiedy jeść kolację",
@@ -22,7 +23,13 @@ const testimonials = [
   { name: "Agnieszka", text: "Przepisy super — proste, smaczne i łatwe do wdrożenia na co dzień." },
 ];
 
-function LeadForm({ variant = "hero" }: { variant?: "hero" | "bottom" }) {
+function LeadForm({
+  variant = "hero",
+  onSubmitSuccess,
+}: {
+  variant?: "hero" | "bottom";
+  onSubmitSuccess?: () => void;
+}) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -41,6 +48,7 @@ function LeadForm({ variant = "hero" }: { variant?: "hero" | "bottom" }) {
     } finally {
       setLoading(false);
       setSubmitted(true);
+      onSubmitSuccess?.();
     }
   };
 
@@ -95,8 +103,27 @@ function LeadForm({ variant = "hero" }: { variant?: "hero" | "bottom" }) {
 }
 
 export default function Home() {
+  const { timeLeft, isRunning, startTimer } = usePromoTimer();
+  const [promoState, setPromoState] = useState<"hidden" | "popup" | "sticky">("hidden");
+
+  // jeśli timer już działa (powrót na stronę po zamknięciu zakładki), pokaż sticky bar
+  useEffect(() => {
+    if (isRunning && promoState === "hidden") {
+      setPromoState("sticky");
+    }
+  }, [isRunning, promoState]);
+
+  const handleFormSuccess = () => {
+    startTimer();
+    setPromoState("popup");
+  };
+
   return (
-    <main className="overflow-x-hidden">
+    <main className="overflow-x-hidden" style={{ paddingTop: promoState === "sticky" ? "52px" : undefined }}>
+      {promoState === "sticky" && <StickyPromoBar timeLeft={timeLeft} />}
+      {promoState === "popup" && (
+        <PromoPopup timeLeft={timeLeft} onDismiss={() => setPromoState("sticky")} />
+      )}
       {/* ── HERO ────────────────────────────────────────────── */}
       <HeroSection
         title={
@@ -110,6 +137,7 @@ export default function Home() {
         sleepBridge="Bo bez głębokiego snu metabolizm nie działa prawidłowo — i żadna dieta, żaden trening nie przyniesie trwałych efektów."
         buttonText="ODBIERAM PROTOKÓŁ ZA DARMO"
         imageUrl="https://zdrowodosetki.pl/wp-content/uploads/2025/12/okladka_ebook_7_dniowy.jpg"
+        onSubmitSuccess={handleFormSuccess}
       />
 
       {/* Wave divider */}
@@ -263,6 +291,22 @@ export default function Home() {
                 <p className="text-sm font-medium leading-snug" style={{ color: "#031F42" }}>{module}</p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <a
+              href="https://zdrowodosetki.pl/kurs/28-dni-calkowitej-przemiany/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-xl px-8 py-4 font-bold text-base transition-all hover:-translate-y-0.5"
+              style={{
+                background: "linear-gradient(135deg, #FFC221 0%, #e8a800 100%)",
+                color: "#031F42",
+                boxShadow: "0 4px 24px rgba(255,194,33,0.3)",
+              }}
+            >
+              Kup kurs i zacznij przemianę →
+            </a>
           </div>
         </div>
       </section>
@@ -491,7 +535,7 @@ export default function Home() {
           </p>
 
           <div className="bg-white rounded-2xl p-8 shadow-2xl text-left">
-            <LeadForm variant="bottom" />
+            <LeadForm variant="bottom" onSubmitSuccess={handleFormSuccess} />
           </div>
         </div>
       </section>
