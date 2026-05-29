@@ -124,7 +124,7 @@ export default function Home() {
         <div className="max-w-3xl mx-auto px-6">
           <div className="rounded-3xl p-8 lg:p-12" style={{ background: "#031F42" }}>
             <p className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: "#FFC221" }}>
-              Ważne
+              Dlaczego diety nie działają
             </p>
             <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6 leading-snug">
               Im dłużej organizm działa<br />
@@ -147,9 +147,28 @@ export default function Home() {
                 </li>
               ))}
             </ul>
-            <p className="text-base font-medium" style={{ color: "#71BFA7" }}>
+            <p className="text-base font-medium mb-6" style={{ color: "#71BFA7" }}>
               Dlatego warto zacząć od podstaw: snu i regeneracji.
             </p>
+
+            {/* Most do kursu */}
+            <div className="rounded-2xl p-5 lg:p-6" style={{ background: "rgba(255,194,33,0.08)", border: "1px solid rgba(255,194,33,0.25)" }}>
+              <p className="text-sm font-semibold text-white mb-1 leading-snug">
+                A jeśli chcesz przejść pełną metamorfozę i odzyskać kontrolę nad metabolizmem na stałe?
+              </p>
+              <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.6)" }}>
+                Przygotowałam kurs <strong style={{ color: "white" }}>„28 Dni Całkowitej Przemiany"</strong> — 28 lekcji, które krok po kroku naprawiają metabolizm, hormony, sen i energię. Bez głodówek, bez liczenia kalorii.
+              </p>
+              <a
+                href="https://zdrowodosetki.pl/kurs/28-dni-calkowitej-przemiany/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sm font-bold transition-opacity hover:opacity-80"
+                style={{ color: "#FFC221" }}
+              >
+                Dowiedz się więcej o kursie →
+              </a>
+            </div>
           </div>
         </div>
       </section>
