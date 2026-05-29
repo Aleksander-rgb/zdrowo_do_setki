@@ -115,9 +115,63 @@ export default function Home() {
       {/* Wave divider */}
       <div className="relative overflow-hidden leading-none" style={{ height: "60px", background: "#031F42", marginTop: "-2px" }}>
         <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" className="w-full h-full">
-          <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#ffffff" />
+          <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#f8f5f0" />
         </svg>
       </div>
+
+      {/* ── MICRO FEAR ──────────────────────────────────────── */}
+      <section className="py-16 lg:py-20" style={{ background: "#f8f5f0" }}>
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="rounded-3xl p-8 lg:p-12" style={{ background: "#031F42" }}>
+            <p className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: "#FFC221" }}>
+              Dlaczego diety nie działają
+            </p>
+            <h2 className="text-2xl lg:text-3xl font-bold text-white mb-6 leading-snug">
+              Im dłużej organizm działa<br />
+              <span style={{ color: "#71BFA7" }}>w przeciążeniu…</span>
+            </h2>
+            <ul className="space-y-3 mb-8">
+              {[
+                "tym trudniej odzyskać energię,",
+                "tym mocniej organizm zatrzymuje tłuszcz zamiast go spalać,",
+                "tym silniejsze napady głodu i ochota na słodkie,",
+                "tym trudniej schudnąć mimo diety i ćwiczeń,",
+                "tym bardziej ciało przyzwyczaja się do ciągłego zmęczenia.",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="mt-0.5 flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold"
+                    style={{ background: "rgba(255,194,33,0.15)", color: "#FFC221", border: "1px solid rgba(255,194,33,0.3)" }}>
+                    !
+                  </span>
+                  <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>{item}</p>
+                </li>
+              ))}
+            </ul>
+            <p className="text-base font-medium mb-6" style={{ color: "#71BFA7" }}>
+              Dlatego warto zacząć od podstaw: snu i regeneracji.
+            </p>
+
+            {/* Most do kursu */}
+            <div className="rounded-2xl p-5 lg:p-6" style={{ background: "rgba(255,194,33,0.08)", border: "1px solid rgba(255,194,33,0.25)" }}>
+              <p className="text-sm font-semibold text-white mb-1 leading-snug">
+                A jeśli chcesz przejść pełną metamorfozę i odzyskać kontrolę nad metabolizmem na stałe?
+              </p>
+              <p className="text-sm leading-relaxed mb-4" style={{ color: "rgba(255,255,255,0.6)" }}>
+                Przygotowałam kurs <strong style={{ color: "white" }}>„28 Dni Całkowitej Przemiany"</strong> — 28 lekcji, które krok po kroku naprawiają metabolizm, hormony, sen i energię. Bez głodówek, bez liczenia kalorii.
+              </p>
+              <a
+                href="https://zdrowodosetki.pl/kurs/28-dni-calkowitej-przemiany/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sm font-bold transition-opacity hover:opacity-80"
+                style={{ color: "#FFC221" }}
+              >
+                Dowiedz się więcej o kursie →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ── CO OSIĄGNIESZ W 28 DNIACH ───────────────────────── */}
       <section className="py-20 lg:py-28 bg-white">
@@ -159,8 +213,46 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── PROGRAM KURSU — 28 LEKCJI ───────────────────────── */}
+      <section style={{ background: "#f8f5f0" }} className="py-20 lg:py-28">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#71BFA7" }}>
+              Program kursu
+            </p>
+            <h2 className="text-3xl lg:text-4xl font-bold" style={{ color: "#031F42" }}>
+              28 lekcji. Jeden dzień,<br className="hidden lg:block" /> jedno konkretne zadanie.
+            </h2>
+            <p className="mt-4 text-base max-w-xl mx-auto leading-relaxed" style={{ color: "#696969" }}>
+              Każda lekcja to gotowy do wdrożenia krok — bez teorii na kilometr, bez skomplikowanych przepisów.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3 mt-6">
+              {["28 lekcji video", "4,5 godziny materiału", "Intro + zakończenie", "Dostęp na zawsze"].map((tag) => (
+                <span key={tag} className="px-4 py-1.5 rounded-full text-xs font-semibold"
+                  style={{ background: "rgba(3,31,66,0.07)", color: "#031F42", border: "1px solid rgba(3,31,66,0.1)" }}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            {courseModules.map((module, i) => (
+              <div key={i} className="flex items-center gap-3 rounded-xl px-4 py-3 bg-white"
+                style={{ border: "1px solid rgba(113,191,167,0.18)" }}>
+                <span className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
+                  style={{ background: "rgba(113,191,167,0.15)", color: "#4fa08a" }}>
+                  {i + 1}
+                </span>
+                <p className="text-sm font-medium leading-snug" style={{ color: "#031F42" }}>{module}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── DWA KROKI DO CAŁKOWITEJ PRZEMIANY ───────────────── */}
-      <section className="py-20 lg:py-28" style={{ background: "#f8f5f0" }}>
+      <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-12">
             <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#71BFA7" }}>
@@ -198,7 +290,7 @@ export default function Home() {
             </div>
 
             {/* Krok 2 — następny */}
-            <div className="rounded-3xl p-8 relative" style={{ background: "white", border: "2px solid rgba(113,191,167,0.2)" }}>
+            <div className="rounded-3xl p-8 relative" style={{ background: "#f8f5f0", border: "2px solid rgba(113,191,167,0.2)" }}>
               <div className="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-bold mb-5"
                 style={{ background: "rgba(255,194,33,0.1)", color: "#e8a800", border: "1px solid rgba(255,194,33,0.3)" }}>
                 NASTĘPNY KROK →
@@ -226,44 +318,6 @@ export default function Home() {
           <p className="text-center text-sm mt-8" style={{ color: "#696969" }}>
             Zacznij od fundamentu. Kurs czeka, kiedy będziesz gotowa.
           </p>
-        </div>
-      </section>
-
-      {/* ── PROGRAM KURSU — 28 LEKCJI ───────────────────────── */}
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-14">
-            <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: "#71BFA7" }}>
-              Program kursu
-            </p>
-            <h2 className="text-3xl lg:text-4xl font-bold" style={{ color: "#031F42" }}>
-              28 lekcji. Jeden dzień,<br className="hidden lg:block" /> jedno konkretne zadanie.
-            </h2>
-            <p className="mt-4 text-base max-w-xl mx-auto leading-relaxed" style={{ color: "#696969" }}>
-              Każda lekcja to gotowy do wdrożenia krok — bez teorii na kilometr, bez skomplikowanych przepisów.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3 mt-6">
-              {["28 lekcji video", "4,5 godziny materiału", "Intro + zakończenie", "Dostęp na zawsze"].map((tag) => (
-                <span key={tag} className="px-4 py-1.5 rounded-full text-xs font-semibold"
-                  style={{ background: "rgba(3,31,66,0.07)", color: "#031F42", border: "1px solid rgba(3,31,66,0.1)" }}>
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
-            {courseModules.map((module, i) => (
-              <div key={i} className="flex items-center gap-3 rounded-xl px-4 py-3"
-                style={{ background: "#f8f5f0", border: "1px solid rgba(113,191,167,0.18)" }}>
-                <span className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
-                  style={{ background: "rgba(113,191,167,0.15)", color: "#4fa08a" }}>
-                  {i + 1}
-                </span>
-                <p className="text-sm font-medium leading-snug" style={{ color: "#031F42" }}>{module}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
