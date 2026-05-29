@@ -195,8 +195,18 @@ export function StickyPromoBar({ timeLeft }: { timeLeft: number }) {
       }}
     >
       <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+        {/* mobile: skrócony tekst */}
+        <span className="sm:hidden text-white text-xs font-semibold flex-shrink-0">
+          −50% na kurs
+        </span>
+        <span className="sm:hidden text-xs flex-shrink-0" style={{ color: "rgba(255,255,255,0.35)" }}>·</span>
+        <span className="sm:hidden font-black tabular-nums text-sm flex-shrink-0" style={{ color: "#71BFA7" }}>
+          {formatTimeString(timeLeft)}
+        </span>
+
+        {/* desktop: pełny tekst */}
         <span
-          className="font-black tracking-widest text-xs sm:text-sm flex-shrink-0"
+          className="hidden sm:inline font-black tracking-widest text-sm flex-shrink-0"
           style={{ color: "#FFC221", letterSpacing: "0.1em" }}
         >
           {PROMO_CODE}
@@ -206,13 +216,10 @@ export function StickyPromoBar({ timeLeft }: { timeLeft: number }) {
           −50% na kurs
         </span>
         <span className="hidden sm:inline" style={{ color: "rgba(255,255,255,0.3)" }}>·</span>
-        <span className="text-xs sm:text-sm flex-shrink-0" style={{ color: "rgba(255,255,255,0.4)" }}>
-          <span className="hidden sm:inline">wygasa za </span>
+        <span className="hidden sm:inline text-sm flex-shrink-0" style={{ color: "rgba(255,255,255,0.4)" }}>
+          wygasa za
         </span>
-        <span
-          className="font-black tabular-nums text-sm sm:text-lg flex-shrink-0"
-          style={{ color: "#71BFA7" }}
-        >
+        <span className="hidden sm:inline font-black tabular-nums text-lg flex-shrink-0" style={{ color: "#71BFA7" }}>
           {formatTimeString(timeLeft)}
         </span>
       </div>
