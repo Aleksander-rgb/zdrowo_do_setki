@@ -236,7 +236,7 @@ export const HeroSection = ({
           {/* Main image */}
           <motion.img
             src={imageUrl}
-            alt="Ebook — 7-Dniowy Protokół Naprawczy Snu"
+            alt="Ebook — 7-Dniowy eBook Naprawczy Snu"
             whileHover={{ y: -10, rotate: 1, transition: { duration: 0.4 } }}
             className="relative rounded-2xl shadow-2xl object-cover w-64 md:w-80"
             style={{

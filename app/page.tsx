@@ -93,7 +93,7 @@ function LeadForm({
         disabled={loading}
         className="gold-btn w-full rounded-xl py-4 px-6 font-bold text-navy text-base cursor-pointer disabled:opacity-70"
       >
-        {loading ? "Wysyłamy..." : "ODBIERAM PROTOKÓŁ ZA DARMO →"}
+        {loading ? "Wysyłamy..." : "ODBIERAM eBOOK ZA DARMO →"}
       </button>
       <p className="text-xs text-center text-gray-400 leading-relaxed">
         Bez spamu. Twoje dane są bezpieczne. Możesz się wypisać w każdej chwili.
@@ -133,9 +133,9 @@ export default function Home() {
             To przeciążony organizm.
           </>
         }
-        description="Sen to fundament metabolizmu. Kiedy go naprawisz — ciało zaczyna spalać, a nie oszczędzać. Sprawdzony protokół, jedno zadanie dziennie. Bez leków, bez stresu."
+        description="Sen to fundament metabolizmu. Kiedy go naprawisz — ciało zaczyna spalać, a nie oszczędzać. Sprawdzony eBook, jedno zadanie dziennie. Bez leków, bez stresu."
         sleepBridge="Bo bez głębokiego snu metabolizm nie działa prawidłowo — i żadna dieta, żaden trening nie przyniesie trwałych efektów."
-        buttonText="ODBIERAM PROTOKÓŁ ZA DARMO"
+        buttonText="ODBIERAM eBOOK ZA DARMO"
         imageUrl="https://zdrowodosetki.pl/wp-content/uploads/2025/12/okladka_ebook_7_dniowy.jpg"
         onSubmitSuccess={handleFormSuccess}
       />
@@ -208,7 +208,7 @@ export default function Home() {
                 ← TUTAJ JESTEŚ
               </div>
               <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: "#71BFA7" }}>Krok 1</p>
-              <h3 className="text-xl font-bold text-white mb-1 leading-snug">7-Dniowy Protokół Naprawy Snu</h3>
+              <h3 className="text-xl font-bold text-white mb-1 leading-snug">7-Dniowy eBook Naprawy Snu</h3>
               <p className="text-2xl font-bold mb-5" style={{ color: "#FFC221" }}>BEZPŁATNY</p>
               <ul className="space-y-3">
                 {[
@@ -515,11 +515,11 @@ export default function Home() {
             Nie gotowa na kurs? Zacznij tu.
           </p>
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 leading-snug">
-            Odbierz darmowy protokół<br />
+            Odbierz darmowy eBook<br />
             <span style={{ color: "#FFC221" }}>i zacznij od fundamentu</span>
           </h2>
           <p className="mb-3 text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
-            7-dniowy protokół naprawy snu to Twój pierwszy krok. Przygotuje organizm na trwałą przemianę — a kurs{" "}
+            7-dniowy eBook naprawy snu to Twój pierwszy krok. Przygotuje organizm na trwałą przemianę — a kurs{" "}
             <a
               href="https://zdrowodosetki.pl/kurs/28-dni-calkowitej-przemiany/"
               target="_blank"
