@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 const STORAGE_KEY = "zdrowodosetki_promo_start";
 const DURATION_MS = 12 * 60 * 60 * 1000;
 const COURSE_URL = "https://zdrowodosetki.pl/kurs/28-dni-calkowitej-przemiany/";
-export const PROMO_CODE = "ZDROWO50PROMO";
+export const PROMO_CODE = "ZDROWODOSETKI";
 
 function formatTime(ms: number): { h: string; m: string; s: string } {
   const total = Math.max(0, Math.floor(ms / 1000));
