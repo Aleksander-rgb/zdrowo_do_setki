@@ -90,7 +90,7 @@ export function PromoPopup({
             Twój osobisty kod rabatowy
           </h2>
           <p className="text-sm mb-6" style={{ color: "rgba(255,255,255,0.5)" }}>
-            −50% na kurs „28 Dni Całkowitej Przemiany"
+            −34% na kurs „28 Dni Całkowitej Przemiany"
           </p>
 
           {/* kod */}
@@ -167,7 +167,7 @@ export function PromoPopup({
               boxShadow: "0 4px 24px rgba(255,194,33,0.35)",
             }}
           >
-            ODBIERAM ZNIŻKĘ 50% →
+            ODBIERAM ZNIŻKĘ 34% →
           </a>
           <button
             onClick={onDismiss}
@@ -197,7 +197,7 @@ export function StickyPromoBar({ timeLeft }: { timeLeft: number }) {
       <div className="flex items-center gap-2 sm:gap-3 min-w-0">
         {/* mobile: skrócony tekst */}
         <span className="sm:hidden text-white text-xs font-semibold flex-shrink-0">
-          −50% na kurs
+          −34% na kurs
         </span>
         <span className="sm:hidden text-xs flex-shrink-0" style={{ color: "rgba(255,255,255,0.35)" }}>·</span>
         <span className="sm:hidden font-black tabular-nums text-sm flex-shrink-0" style={{ color: "#71BFA7" }}>
@@ -213,7 +213,7 @@ export function StickyPromoBar({ timeLeft }: { timeLeft: number }) {
         </span>
         <span className="hidden sm:inline" style={{ color: "rgba(255,255,255,0.3)" }}>·</span>
         <span className="hidden sm:inline text-white text-sm font-semibold flex-shrink-0">
-          −50% na kurs
+          −34% na kurs
         </span>
         <span className="hidden sm:inline" style={{ color: "rgba(255,255,255,0.3)" }}>·</span>
         <span className="hidden sm:inline text-sm flex-shrink-0" style={{ color: "rgba(255,255,255,0.4)" }}>
