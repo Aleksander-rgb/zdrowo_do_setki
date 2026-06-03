@@ -234,7 +234,7 @@ export default function Home() {
               <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: "#696969" }}>Krok 2</p>
               <h3 className="text-xl font-bold mb-1 leading-snug" style={{ color: "#031F42" }}>28 Dni Całkowitej Przemiany</h3>
               <p className="text-sm font-semibold mb-1" style={{ color: "#696969" }}>Metaboliczna Przewaga</p>
-              <p className="text-2xl font-bold mb-5" style={{ color: "#031F42" }}>197 zł</p>
+              <p className="text-2xl font-bold mb-5" style={{ color: "#031F42" }}>300 zł</p>
               <ul className="space-y-3">
                 {[
                   "Odblokuj metabolizm na stałe",
@@ -461,12 +461,19 @@ export default function Home() {
 
           <div className="rounded-3xl p-8 lg:p-12 mb-8" style={{ background: "#031F42" }}>
             <div className="flex flex-col items-center gap-2 mb-6">
-              <p className="text-sm line-through" style={{ color: "rgba(255,255,255,0.35)" }}>300 zł</p>
-              <p className="text-5xl font-bold text-white">197 <span className="text-2xl font-semibold">zł</span></p>
-              <span className="px-3 py-1 rounded-full text-xs font-bold"
-                style={{ background: "rgba(255,194,33,0.15)", color: "#FFC221", border: "1px solid rgba(255,194,33,0.3)" }}>
-                Oszczędzasz 34%
-              </span>
+              {promoState !== "hidden" && (
+                <p className="text-sm line-through" style={{ color: "rgba(255,255,255,0.35)" }}>300 zł</p>
+              )}
+              <p className="text-5xl font-bold text-white">
+                {promoState !== "hidden" ? "197" : "300"}{" "}
+                <span className="text-2xl font-semibold">zł</span>
+              </p>
+              {promoState !== "hidden" && (
+                <span className="px-3 py-1 rounded-full text-xs font-bold"
+                  style={{ background: "rgba(255,194,33,0.15)", color: "#FFC221", border: "1px solid rgba(255,194,33,0.3)" }}>
+                  Oszczędzasz 34%
+                </span>
+              )}
             </div>
 
             <ul className="space-y-3 mb-8 text-left max-w-sm mx-auto">
@@ -496,7 +503,7 @@ export default function Home() {
                 boxShadow: "0 4px 20px rgba(255,194,33,0.35)",
               }}
             >
-              KUPUJĘ KURS — 197 ZŁ →
+              {promoState !== "hidden" ? "KUPUJĘ KURS — 197 ZŁ →" : "KUPUJĘ KURS — 300 ZŁ →"}
             </a>
             <p className="text-xs mt-4" style={{ color: "rgba(255,255,255,0.35)" }}>
               Bezpieczna płatność · Dostęp natychmiastowy
