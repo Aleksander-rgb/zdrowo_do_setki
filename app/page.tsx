@@ -465,19 +465,16 @@ export default function Home() {
 
           <div className="rounded-3xl p-8 lg:p-12 mb-8" style={{ background: "#031F42" }}>
             <div className="flex flex-col items-center gap-2 mb-6">
-              {promoState !== "hidden" && (
-                <p className="text-sm line-through" style={{ color: "rgba(255,255,255,0.35)" }}>300 zł</p>
-              )}
-              <p className="text-5xl font-bold text-white">
-                {promoState !== "hidden" ? "197" : "300"}{" "}
-                <span className="text-2xl font-semibold">zł</span>
-              </p>
-              {promoState !== "hidden" && (
-                <span className="px-3 py-1 rounded-full text-xs font-bold"
-                  style={{ background: "rgba(255,194,33,0.15)", color: "#FFC221", border: "1px solid rgba(255,194,33,0.3)" }}>
-                  Oszczędzasz 34%
-                </span>
-              )}
+              <div className="flex items-center gap-3">
+                <p className="text-5xl font-bold text-white">198 <span className="text-2xl font-semibold">zł</span></p>
+                <div className="flex flex-col gap-1">
+                  <p className="text-sm line-through" style={{ color: "rgba(255,255,255,0.4)" }}>300 zł</p>
+                  <span className="px-2 py-0.5 rounded-full text-xs font-bold text-center"
+                    style={{ background: "rgba(255,194,33,0.15)", color: "#FFC221", border: "1px solid rgba(255,194,33,0.3)" }}>
+                    −34%
+                  </span>
+                </div>
+              </div>
             </div>
 
             <ul className="space-y-3 mb-8 text-left max-w-sm mx-auto">
@@ -507,7 +504,7 @@ export default function Home() {
                 boxShadow: "0 4px 20px rgba(255,194,33,0.35)",
               }}
             >
-              {promoState !== "hidden" ? "KUPUJĘ KURS — 197 ZŁ →" : "KUPUJĘ KURS — 300 ZŁ →"}
+              KUPUJĘ KURS — 198 ZŁ →
             </a>
             <p className="text-xs mt-4" style={{ color: "rgba(255,255,255,0.35)" }}>
               Bezpieczna płatność · Dostęp natychmiastowy
