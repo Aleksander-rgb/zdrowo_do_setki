@@ -234,7 +234,11 @@ export default function Home() {
               <p className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: "#696969" }}>Krok 2</p>
               <h3 className="text-xl font-bold mb-1 leading-snug" style={{ color: "#031F42" }}>28 Dni Całkowitej Przemiany</h3>
               <p className="text-sm font-semibold mb-1" style={{ color: "#696969" }}>Metaboliczna Przewaga</p>
-              <p className="text-2xl font-bold mb-5" style={{ color: "#031F42" }}>300 zł</p>
+              <div className="flex items-center gap-3 mb-5">
+                <p className="text-2xl font-bold" style={{ color: "#031F42" }}>198 zł</p>
+                <p className="text-base font-medium line-through" style={{ color: "#999" }}>300 zł</p>
+                <span className="text-xs font-bold px-2 py-0.5 rounded-full" style={{ background: "rgba(232,168,0,0.12)", color: "#e8a800", border: "1px solid rgba(232,168,0,0.3)" }}>−34%</span>
+              </div>
               <ul className="space-y-3">
                 {[
                   "Odblokuj metabolizm na stałe",
